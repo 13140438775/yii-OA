@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fpdl:WorkflowProcess PUBLIC "-//Nieyun Chen//ProcessDefinition//CN" "FireFlow_Process_Definition_Language.dtd">
+
+<fpdl:WorkflowProcess xmlns:fpdl="http://www.fireflow.org/Fireflow_Process_Definition_Language" Id="TaskOrderFinish" Name="TaskOrderFinish" DisplayName="TaskOrderFinish" ResourceFile="" ResourceManager="" FormTaskInstanceRunner="app\services\AssignService" SubflowTaskInstanceRunner="app\services\SubFlowService">
+    <fpdl:DataFields>
+        <fpdl:DataField Id="TaskOrderFinish.dismantle" Name="dismantle" DisplayName="" DataType="INTEGER" InitialValue="0"/>
+        <fpdl:DataField Id="TaskOrderFinish.constructMaterials" Name="constructMaterials" DisplayName="" DataType="INTEGER" InitialValue="1"/>
+        <fpdl:DataField Id="TaskOrderFinish.ConstructMaterialsConfirm" Name="ConstructMaterialsConfirm" DisplayName="" DataType="INTEGER" InitialValue="0"/>
+    </fpdl:DataFields>
+    <fpdl:StartNode Id="TaskOrderFinish.START_NODE" Name="START_NODE" DisplayName="">
+        <fpdl:ExtendedAttributes>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="224"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="-117"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+        </fpdl:ExtendedAttributes>
+    </fpdl:StartNode>
+    <fpdl:Tasks/>
+    <fpdl:Activities>
+        <fpdl:Activity Id="TaskOrderFinish.Activity1" Name="Activity1" DisplayName="录入拆除费用订单" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="137"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="101"/>
+                <fpdl:ExtendedAttribute Name="page" Value="dismantleCost"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="10"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskOrderFinish.Activity1.Task1" Name="Task1" DisplayName="录入拆除费用订单" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskOrderFinish.Activity2" Name="Activity2" DisplayName="录入装修物料订单" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="338"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="243"/>
+                <fpdl:ExtendedAttribute Name="page" Value="setupShop"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="6"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskOrderFinish.Activity2.Task2" Name="Task2" DisplayName="录入装修款项&amp;施工物料订单" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskOrderFinish.Activity3" Name="Activity3" DisplayName="确认装修物料订单" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="purchase-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="339"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="400"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-order"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="6"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskOrderFinish.Activity3.Task3" Name="Task3" DisplayName="确认施工物料清单" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskOrderFinish.Activity4" Name="Activity4" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="241"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="112"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks/>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskOrderFinish.Activity5" Name="Activity5" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="265"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="569"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks/>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskOrderFinish.Activity6" Name="Activity6" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="136"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="700"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks/>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskOrderFinish.Activity7" Name="Activity7" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="202"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="-70"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskOrderFinish.Activity7.Task4" Name="Task4" DisplayName="辅助模块" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+    </fpdl:Activities>
+    <fpdl:Synchronizers>
+        <fpdl:Synchronizer Id="TaskOrderFinish.Synchronizer1" Name="Synchronizer1" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="310"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="224"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskOrderFinish.Synchronizer2" Name="Synchronizer2" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="358"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="366"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskOrderFinish.Synchronizer3" Name="Synchronizer3" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="310"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="514"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskOrderFinish.Synchronizer4" Name="Synchronizer4" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="152"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="608"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="26"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskOrderFinish.Synchronizer5" Name="Synchronizer5" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="223"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="52"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+    </fpdl:Synchronizers>
+    <fpdl:EndNodes>
+        <fpdl:EndNode Id="TaskOrderFinish.EndNode1" Name="EndNode1" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="157"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="837"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:EndNode>
+    </fpdl:EndNodes>
+    <fpdl:Transitions>
+        <fpdl:Transition Id="TaskOrderFinish.Transition2" From="TaskOrderFinish.Activity4" To="TaskOrderFinish.Synchronizer1" Name="Transition2" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskOrderFinish.Transition3" From="TaskOrderFinish.Synchronizer1" To="TaskOrderFinish.Activity2" Name="Transition3" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskOrderFinish.Transition4" From="TaskOrderFinish.Activity2" To="TaskOrderFinish.Synchronizer2" Name="Transition4" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskOrderFinish.Transition5" From="TaskOrderFinish.Synchronizer2" To="TaskOrderFinish.Activity3" Name="Transition5" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskOrderFinish.Transition6" From="TaskOrderFinish.Activity3" To="TaskOrderFinish.Synchronizer3" Name="Transition6" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskOrderFinish.Transition7" From="TaskOrderFinish.Synchronizer3" To="TaskOrderFinish.Activity5" Name="Transition7" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskOrderFinish.Transition10" From="TaskOrderFinish.Activity1" To="TaskOrderFinish.Synchronizer4" Name="Transition10" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskOrderFinish.Transition11" From="TaskOrderFinish.Activity5" To="TaskOrderFinish.Synchronizer4" Name="Transition11" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskOrderFinish.Transition12" From="TaskOrderFinish.Activity6" To="TaskOrderFinish.EndNode1" Name="Transition12" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskOrderFinish.Transition13" From="TaskOrderFinish.Synchronizer4" To="TaskOrderFinish.Activity6" Name="Transition13" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskOrderFinish.Transition14" From="TaskOrderFinish.Activity7" To="TaskOrderFinish.Synchronizer5" Name="Transition14" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskOrderFinish.Transition15" From="TaskOrderFinish.START_NODE" To="TaskOrderFinish.Activity7" Name="Transition15" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskOrderFinish.Transition16" From="TaskOrderFinish.Synchronizer5" To="TaskOrderFinish.Activity4" Name="Transition16" DisplayName="">
+            <fpdl:Condition>constructMaterials==1</fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskOrderFinish.Transition17" From="TaskOrderFinish.Synchronizer5" To="TaskOrderFinish.Activity1" Name="Transition17" DisplayName="">
+            <fpdl:Condition>dismantle==1</fpdl:Condition>
+        </fpdl:Transition>
+    </fpdl:Transitions>
+    <fpdl:Loops>
+        <fpdl:Loop Id="TaskOrderFinish.Loop1" From="TaskOrderFinish.Synchronizer3" To="TaskOrderFinish.Synchronizer1" Name="Loop1" DisplayName="">
+            <fpdl:Condition>ConstructMaterialsConfirm==0</fpdl:Condition>
+        </fpdl:Loop>
+    </fpdl:Loops>
+</fpdl:WorkflowProcess>

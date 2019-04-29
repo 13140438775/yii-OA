@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fpdl:WorkflowProcess PUBLIC "-//Nieyun Chen//ProcessDefinition//CN" "FireFlow_Process_Definition_Language.dtd">
+
+<fpdl:WorkflowProcess xmlns:fpdl="http://www.fireflow.org/Fireflow_Process_Definition_Language" Id="HouseTask" Name="HouseTask" DisplayName="HouseTask" ResourceFile="" ResourceManager="" FormTaskInstanceRunner="app\services\AssignService" SubflowTaskInstanceRunner="app\services\SubFlowService">
+    <fpdl:DataFields>
+        <fpdl:DataField Id="HouseTask.IsHouseFee" Name="IsHouseFee" DisplayName="" DataType="INTEGER" InitialValue="1"/>
+        <fpdl:DataField Id="HouseTask.IsHouseContract" Name="IsHouseContract" DisplayName="" DataType="INTEGER" InitialValue="1"/>
+    </fpdl:DataFields>
+    <fpdl:StartNode Id="HouseTask.START_NODE" Name="START_NODE" DisplayName="">
+        <fpdl:ExtendedAttributes>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="177"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="15"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+        </fpdl:ExtendedAttributes>
+    </fpdl:StartNode>
+    <fpdl:Tasks/>
+    <fpdl:Activities>
+        <fpdl:Activity Id="HouseTask.Activity1" Name="Activity1" DisplayName="选择开店租房地址" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="158"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="71"/>
+                <fpdl:ExtendedAttribute Name="page" Value="gym-address"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="HouseTask.Activity1.Task1" Name="Task1" DisplayName="提交健身房地址" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="HouseTask.Activity2" Name="Activity2" DisplayName="确认租房费用" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="financial-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="77"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="278"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-costh"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="HouseTask.Activity2.Task2" Name="Task2" DisplayName="确认房租费用" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="HouseTask.Activity3" Name="Activity3" DisplayName="确认租房合同" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="flow-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="253"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="274"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-lease"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="HouseTask.Activity3.Task3" Name="Task3" DisplayName="确认房租合同" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="HouseTask.Activity4" Name="Activity4" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="33"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="432"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks/>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="HouseTask.Activity5" Name="Activity5" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="138"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="533"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks/>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="HouseTask.Activity6" Name="Activity6" DisplayName="修改租房打款费用" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="25"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="583"/>
+                <fpdl:ExtendedAttribute Name="page" Value="lease-expense"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="HouseTask.Activity6.Task4" Name="Task4" DisplayName="修改租房费用" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="HouseTask.Activity7" Name="Activity7" DisplayName="确认租房打款费用" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="financial-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="29"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="731"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-costh"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="HouseTask.Activity7.Task5" Name="Task5" DisplayName="确认房租费用" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="HouseTask.Activity8" Name="Activity8" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="28"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="891"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks/>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="HouseTask.Activity9" Name="Activity9" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="204"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="535"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks/>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="HouseTask.Activity10" Name="Activity10" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="295"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="438"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks/>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="HouseTask.Activity11" Name="Activity11" DisplayName="修改开店租房地址" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="298"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="592"/>
+                <fpdl:ExtendedAttribute Name="page" Value="gym-address"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="HouseTask.Activity11.Task6" Name="Task6" DisplayName="修改健身房地址" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="HouseTask.Activity12" Name="Activity12" DisplayName="确认租房合同" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="flow-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="301"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="739"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-lease"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="HouseTask.Activity12.Task7" Name="Task7" DisplayName="确认房租合同" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="HouseTask.Activity13" Name="Activity13" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="295"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="903"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks/>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="HouseTask.Activity14" Name="Activity14" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="173"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="994"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks/>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="HouseTask.Activity15" Name="Activity15" DisplayName="录入租房打款费用" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="249"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="75"/>
+                <fpdl:ExtendedAttribute Name="page" Value="lease-expense"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="HouseTask.Activity15.Task8" Name="Task8" DisplayName="登记租房费用" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+    </fpdl:Activities>
+    <fpdl:Synchronizers>
+        <fpdl:Synchronizer Id="HouseTask.Synchronizer1" Name="Synchronizer1" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="95"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="392"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="HouseTask.Synchronizer2" Name="Synchronizer2" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="53"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="547"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="HouseTask.Synchronizer3" Name="Synchronizer3" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="52"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="693"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="HouseTask.Synchronizer4" Name="Synchronizer4" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="48"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="851"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="HouseTask.Synchronizer5" Name="Synchronizer5" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="180"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="224"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="HouseTask.Synchronizer6" Name="Synchronizer6" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="276"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="397"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="HouseTask.Synchronizer7" Name="Synchronizer7" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="316"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="555"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="HouseTask.Synchronizer8" Name="Synchronizer8" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="319"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="705"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="HouseTask.Synchronizer9" Name="Synchronizer9" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="318"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="861"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="HouseTask.Synchronizer10" Name="Synchronizer10" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="191"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="937"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="HouseTask.Synchronizer11" Name="Synchronizer11" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="223"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="113"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+    </fpdl:Synchronizers>
+    <fpdl:EndNodes>
+        <fpdl:EndNode Id="HouseTask.EndNode1" Name="EndNode1" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="192"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="1131"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:EndNode>
+    </fpdl:EndNodes>
+    <fpdl:Transitions>
+        <fpdl:Transition Id="HouseTask.Transition1" From="HouseTask.Activity2" To="HouseTask.Synchronizer1" Name="Transition1" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition2" From="HouseTask.Synchronizer1" To="HouseTask.Activity4" Name="Transition2" DisplayName="">
+            <fpdl:Condition>IsHouseFee==0</fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition3" From="HouseTask.Activity4" To="HouseTask.Synchronizer2" Name="Transition3" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition4" From="HouseTask.Synchronizer2" To="HouseTask.Activity6" Name="Transition4" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition5" From="HouseTask.Activity6" To="HouseTask.Synchronizer3" Name="Transition5" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition6" From="HouseTask.Synchronizer3" To="HouseTask.Activity7" Name="Transition6" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition7" From="HouseTask.Activity7" To="HouseTask.Synchronizer4" Name="Transition7" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition8" From="HouseTask.Synchronizer4" To="HouseTask.Activity8" Name="Transition8" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition9" From="HouseTask.START_NODE" To="HouseTask.Activity1" Name="Transition9" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition11" From="HouseTask.Synchronizer5" To="HouseTask.Activity2" Name="Transition11" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition12" From="HouseTask.Synchronizer5" To="HouseTask.Activity3" Name="Transition12" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition13" From="HouseTask.Synchronizer1" To="HouseTask.Activity5" Name="Transition13" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition14" From="HouseTask.Activity3" To="HouseTask.Synchronizer6" Name="Transition14" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition15" From="HouseTask.Synchronizer6" To="HouseTask.Activity9" Name="Transition15" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition16" From="HouseTask.Synchronizer6" To="HouseTask.Activity10" Name="Transition16" DisplayName="">
+            <fpdl:Condition>IsHouseContract==0</fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition17" From="HouseTask.Activity10" To="HouseTask.Synchronizer7" Name="Transition17" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition18" From="HouseTask.Synchronizer7" To="HouseTask.Activity11" Name="Transition18" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition19" From="HouseTask.Activity11" To="HouseTask.Synchronizer8" Name="Transition19" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition20" From="HouseTask.Synchronizer8" To="HouseTask.Activity12" Name="Transition20" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition21" From="HouseTask.Activity12" To="HouseTask.Synchronizer9" Name="Transition21" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition22" From="HouseTask.Synchronizer9" To="HouseTask.Activity13" Name="Transition22" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition23" From="HouseTask.Activity13" To="HouseTask.Synchronizer10" Name="Transition23" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition24" From="HouseTask.Synchronizer10" To="HouseTask.Activity14" Name="Transition24" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition25" From="HouseTask.Activity14" To="HouseTask.EndNode1" Name="Transition25" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition26" From="HouseTask.Activity8" To="HouseTask.Synchronizer10" Name="Transition26" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition27" From="HouseTask.Activity5" To="HouseTask.Synchronizer10" Name="Transition27" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition28" From="HouseTask.Activity9" To="HouseTask.Synchronizer10" Name="Transition28" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition29" From="HouseTask.Activity15" To="HouseTask.Synchronizer5" Name="Transition29" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition30" From="HouseTask.Activity1" To="HouseTask.Synchronizer11" Name="Transition30" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="HouseTask.Transition31" From="HouseTask.Synchronizer11" To="HouseTask.Activity15" Name="Transition31" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+    </fpdl:Transitions>
+    <fpdl:Loops>
+        <fpdl:Loop Id="HouseTask.Loop1" From="HouseTask.Synchronizer4" To="HouseTask.Synchronizer2" Name="Loop1" DisplayName="">
+            <fpdl:Condition>IsHouseFee==0</fpdl:Condition>
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.labelPosition" Value="(522,114)"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.edgePointList" Value="(819,116)(612,116)"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Loop>
+        <fpdl:Loop Id="HouseTask.Loop2" From="HouseTask.Synchronizer9" To="HouseTask.Synchronizer7" Name="Loop2" DisplayName="">
+            <fpdl:Condition>IsHouseContract==0</fpdl:Condition>
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.labelPosition" Value="(533,272)"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.edgePointList" Value="(852,275)(718,271)(602,273)"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Loop>
+    </fpdl:Loops>
+</fpdl:WorkflowProcess>

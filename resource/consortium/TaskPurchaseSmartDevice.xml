@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fpdl:WorkflowProcess PUBLIC "-//Nieyun Chen//ProcessDefinition//CN" "FireFlow_Process_Definition_Language.dtd">
+
+<fpdl:WorkflowProcess xmlns:fpdl="http://www.fireflow.org/Fireflow_Process_Definition_Language" Id="TaskPurchaseSmartDevice" Name="TaskPurchaseSmartDevice" DisplayName="TaskPurchaseSmartDevice" ResourceFile="" ResourceManager="" FormTaskInstanceRunner="app\services\AssignService" SubflowTaskInstanceRunner="app\services\SubFlowService">
+    <fpdl:StartNode Id="TaskPurchaseSmartDevice.START_NODE" Name="START_NODE" DisplayName="">
+        <fpdl:ExtendedAttributes>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="222"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="47"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+        </fpdl:ExtendedAttributes>
+    </fpdl:StartNode>
+    <fpdl:Tasks/>
+    <fpdl:Activities>
+        <fpdl:Activity Id="TaskPurchaseSmartDevice.Activity1" Name="Activity1" DisplayName="录入智能硬件订单期望到货时间" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="205"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="107"/>
+                <fpdl:ExtendedAttribute Name="page" Value="cargo-data"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="3"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseSmartDevice.Activity1.Task1" Name="Task1" DisplayName="录入智能设备相关订单预计发货时间" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseSmartDevice.Activity2" Name="Activity2" DisplayName="确认智能硬件订单已发货" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="purchase-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="202"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="271"/>
+                <fpdl:ExtendedAttribute Name="page" Value="deliver"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="3"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseSmartDevice.Activity2.Task2" Name="Task2" DisplayName="录入智能设备相关订单发货时间及预计到货时间" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseSmartDevice.Activity3" Name="Activity3" DisplayName="确认智能硬件订单已到货" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="199"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="440"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-deliver"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="3"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseSmartDevice.Activity3.Task3" Name="Task3" DisplayName="录入智能设备订单实际到货日期并上传凭证" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseSmartDevice.Activity4" Name="Activity4" DisplayName="录入智能硬件调试完成" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="199"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="590"/>
+                <fpdl:ExtendedAttribute Name="page" Value="intelligent-device"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseSmartDevice.Activity4.Task4" Name="Task4" DisplayName="录入调试完成记录" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+    </fpdl:Activities>
+    <fpdl:Synchronizers>
+        <fpdl:Synchronizer Id="TaskPurchaseSmartDevice.Synchronizer1" Name="Synchronizer1" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="223"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="229"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseSmartDevice.Synchronizer2" Name="Synchronizer2" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="220"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="395"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseSmartDevice.Synchronizer3" Name="Synchronizer3" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="219"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="555"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+    </fpdl:Synchronizers>
+    <fpdl:EndNodes>
+        <fpdl:EndNode Id="TaskPurchaseSmartDevice.EndNode1" Name="EndNode1" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="221"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="757"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:EndNode>
+    </fpdl:EndNodes>
+    <fpdl:Transitions>
+        <fpdl:Transition Id="TaskPurchaseSmartDevice.Transition1" From="TaskPurchaseSmartDevice.START_NODE" To="TaskPurchaseSmartDevice.Activity1" Name="Transition1" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseSmartDevice.Transition2" From="TaskPurchaseSmartDevice.Activity1" To="TaskPurchaseSmartDevice.Synchronizer1" Name="Transition2" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseSmartDevice.Transition3" From="TaskPurchaseSmartDevice.Synchronizer1" To="TaskPurchaseSmartDevice.Activity2" Name="Transition3" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseSmartDevice.Transition4" From="TaskPurchaseSmartDevice.Activity2" To="TaskPurchaseSmartDevice.Synchronizer2" Name="Transition4" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseSmartDevice.Transition5" From="TaskPurchaseSmartDevice.Synchronizer2" To="TaskPurchaseSmartDevice.Activity3" Name="Transition5" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseSmartDevice.Transition6" From="TaskPurchaseSmartDevice.Activity3" To="TaskPurchaseSmartDevice.Synchronizer3" Name="Transition6" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseSmartDevice.Transition7" From="TaskPurchaseSmartDevice.Synchronizer3" To="TaskPurchaseSmartDevice.Activity4" Name="Transition7" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseSmartDevice.Transition8" From="TaskPurchaseSmartDevice.Activity4" To="TaskPurchaseSmartDevice.EndNode1" Name="Transition8" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+    </fpdl:Transitions>
+</fpdl:WorkflowProcess>

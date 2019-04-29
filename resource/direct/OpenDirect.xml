@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fpdl:WorkflowProcess PUBLIC "-//Nieyun Chen//ProcessDefinition//CN" "FireFlow_Process_Definition_Language.dtd">
+
+<fpdl:WorkflowProcess xmlns:fpdl="http://www.fireflow.org/Fireflow_Process_Definition_Language" Id="OpenDirect" Name="OpenDirect" DisplayName="直营" ResourceFile="" ResourceManager="" FormTaskInstanceRunner="app\services\AssignService" SubflowTaskInstanceRunner="app\services\SubFlowService">
+    <fpdl:DataFields>
+        <fpdl:DataField Id="OpenDirect.IsHouseContract" Name="IsHouseContract" DisplayName="" DataType="STRING" InitialValue="0"/>
+    </fpdl:DataFields>
+    <fpdl:StartNode Id="OpenDirect.START_NODE" Name="START_NODE" DisplayName="">
+        <fpdl:ExtendedAttributes>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="208"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="69"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+        </fpdl:ExtendedAttributes>
+    </fpdl:StartNode>
+    <fpdl:Tasks/>
+    <fpdl:Activities>
+        <fpdl:Activity Id="OpenDirect.Activity2" Name="Activity2" DisplayName="指定财务专员" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="financial-manager"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="187"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="378"/>
+                <fpdl:ExtendedAttribute Name="page" Value="processAsscoiate"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="type" Value="2"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="OpenDirect.Activity2.task1" Name="task1" DisplayName="指定财务专员" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="OpenDirect.Activity4" Name="Activity4" DisplayName="指定流程专员" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="flow-manager"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="263"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="277"/>
+                <fpdl:ExtendedAttribute Name="page" Value="processAsscoiate"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="type" Value="1"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="OpenDirect.Activity4.task1" Name="task1" DisplayName="指定流程专员" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="OpenDirect.Activity3" Name="Activity3" DisplayName="录入租房费用" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="financial-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="186"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="568"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-costh"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="OpenDirect.Activity3.task1" Name="task1" DisplayName="" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="OpenDirect.Activity11" Name="Activity11" DisplayName="指定项目专员" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-manager"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="185"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="1227"/>
+                <fpdl:ExtendedAttribute Name="page" Value="processAsscoiate"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="type" Value="3"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="OpenDirect.Activity11.Task5" Name="Task5" DisplayName="项目负责人指定项目专员" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="OpenDirect.Activity8" Name="Activity8" DisplayName="修改租房合同" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="operation-assistant"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="439"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="741"/>
+                <fpdl:ExtendedAttribute Name="page" Value="gym-address"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="OpenDirect.Activity8.task1" Name="task1" DisplayName="修改房屋合同" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="OpenDirect.Activity5" Name="Activity5" DisplayName="确认租房合同" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="flow-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="351"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="381"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-lease"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="OpenDirect.Activity5.task1" Name="task1" DisplayName="确认房租合同" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="OpenDirect.Activity6" Name="Activity6" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="284"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="573"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks/>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="OpenDirect.Activity10" Name="Activity10" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="434"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="1118"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks/>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="OpenDirect.Activity9" Name="Activity9" DisplayName="确认租房合同" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="flow-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="437"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="939"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-lease"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="OpenDirect.Activity9.Task1" Name="Task1" DisplayName="确认房租合同" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="OpenDirect.Activity7" Name="Activity7" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="439"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="571"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks/>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="OpenDirect.Activity12" Name="Activity12" DisplayName="确认平面图完成" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="operation-assistant"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="186"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="1448"/>
+                <fpdl:ExtendedAttribute Name="page" Value="planarTime"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="OpenDirect.Activity12.Task1" Name="Task1" DisplayName="确认平面图完成" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="OpenDirect.Activity29" Name="Activity29" DisplayName="确认正式营业时期" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="185"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="2068"/>
+                <fpdl:ExtendedAttribute Name="page" Value="operating"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="OpenDirect.Activity29.Task24" Name="Task24" DisplayName="录入正式营业时期并确认账单费用" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="OpenDirect.Activity14" Name="Activity14" DisplayName="订单子流程" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="184"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="1639"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="OpenDirect.Activity14.Task26" Name="Task26" DisplayName="" Type="SUBFLOW" Priority="1" LoopStrategy="REDO">
+                    <fpdl:SubWorkflowProcess Name="Order" DisplayName="Order">
+                        <fpdl:Description></fpdl:Description>
+                        <fpdl:WorkflowProcessId>Order</fpdl:WorkflowProcessId>
+                    </fpdl:SubWorkflowProcess>
+                </fpdl:Task>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="OpenDirect.Activity15" Name="Activity15" DisplayName="确认开店账单费用" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="185"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="1864"/>
+                <fpdl:ExtendedAttribute Name="page" Value="shop-costs"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="OpenDirect.Activity15.Task12" Name="Task12" DisplayName="" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="OpenDirect.Activity1" Name="Activity1" DisplayName="新增直营健身房" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="operation-assistant"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="188"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="156"/>
+                <fpdl:ExtendedAttribute Name="page" Value="gym-address"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="OpenDirect.Activity1.Task13" Name="Task13" DisplayName="" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+    </fpdl:Activities>
+    <fpdl:Synchronizers>
+        <fpdl:Synchronizer Id="OpenDirect.Synchronizer1" Name="Synchronizer1" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="209"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="318"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="OpenDirect.Synchronizer3" Name="Synchronizer3" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="371"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="318"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="OpenDirect.Synchronizer4" Name="Synchronizer4" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="206"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="512"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="OpenDirect.Synchronizer5" Name="Synchronizer5" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="206"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="1157"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="23"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="OpenDirect.Synchronizer2" Name="Synchronizer2" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="373"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="518"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="OpenDirect.Synchronizer6" Name="Synchronizer6" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="458"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="880"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="OpenDirect.Synchronizer7" Name="Synchronizer7" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="456"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="1065"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="OpenDirect.Synchronizer8" Name="Synchronizer8" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="459"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="699"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="OpenDirect.Synchronizer9" Name="Synchronizer9" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="207"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="1377"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="OpenDirect.Synchronizer10" Name="Synchronizer10" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="205"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="1773"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="OpenDirect.Synchronizer24" Name="Synchronizer24" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="206"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="1585"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="OpenDirect.Synchronizer12" Name="Synchronizer12" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="205"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="2006"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+    </fpdl:Synchronizers>
+    <fpdl:EndNodes>
+        <fpdl:EndNode Id="OpenDirect.EndNode1" Name="EndNode1" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="204"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="2235"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="19"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="21"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:EndNode>
+    </fpdl:EndNodes>
+    <fpdl:Transitions>
+        <fpdl:Transition Id="OpenDirect.Transition4" From="OpenDirect.Activity4" To="OpenDirect.Synchronizer3" Name="Transition4" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition6" From="OpenDirect.Activity2" To="OpenDirect.Synchronizer4" Name="Transition6" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition7" From="OpenDirect.Synchronizer4" To="OpenDirect.Activity3" Name="Transition7" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition8" From="OpenDirect.Synchronizer1" To="OpenDirect.Activity2" Name="Transition8" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition9" From="OpenDirect.Synchronizer1" To="OpenDirect.Activity4" Name="Transition9" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition10" From="OpenDirect.Synchronizer3" To="OpenDirect.Activity5" Name="Transition10" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition12" From="OpenDirect.Activity5" To="OpenDirect.Synchronizer2" Name="Transition12" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition15" From="OpenDirect.Activity8" To="OpenDirect.Synchronizer6" Name="Transition15" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition19" From="OpenDirect.Activity9" To="OpenDirect.Synchronizer7" Name="Transition19" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition17" From="OpenDirect.Synchronizer6" To="OpenDirect.Activity9" Name="Transition17" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition22" From="OpenDirect.Synchronizer7" To="OpenDirect.Activity10" Name="Transition22" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition25" From="OpenDirect.Synchronizer2" To="OpenDirect.Activity7" Name="Transition25" DisplayName="">
+            <fpdl:Condition>IsHouseContract==0</fpdl:Condition>
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.labelPosition" Value="(2049,447)"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition26" From="OpenDirect.Activity7" To="OpenDirect.Synchronizer8" Name="Transition26" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition24" From="OpenDirect.Synchronizer8" To="OpenDirect.Activity8" Name="Transition24" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition28" From="OpenDirect.Activity11" To="OpenDirect.Synchronizer9" Name="Transition28" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition20" From="OpenDirect.Synchronizer2" To="OpenDirect.Activity6" Name="Transition20" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition21" From="OpenDirect.Activity6" To="OpenDirect.Synchronizer5" Name="Transition21" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition23" From="OpenDirect.Activity10" To="OpenDirect.Synchronizer5" Name="Transition23" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition27" From="OpenDirect.Activity3" To="OpenDirect.Synchronizer5" Name="Transition27" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition30" From="OpenDirect.Synchronizer5" To="OpenDirect.Activity11" Name="Transition30" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition31" From="OpenDirect.Synchronizer9" To="OpenDirect.Activity12" Name="Transition31" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition48" From="OpenDirect.Activity29" To="OpenDirect.EndNode1" Name="Transition48" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition63" From="OpenDirect.Activity14" To="OpenDirect.Synchronizer10" Name="Transition63" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition74" From="OpenDirect.Synchronizer24" To="OpenDirect.Activity14" Name="Transition74" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition29" From="OpenDirect.Activity12" To="OpenDirect.Synchronizer24" Name="Transition29" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition32" From="OpenDirect.Synchronizer10" To="OpenDirect.Activity15" Name="Transition32" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition33" From="OpenDirect.Activity15" To="OpenDirect.Synchronizer12" Name="Transition33" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition34" From="OpenDirect.Synchronizer12" To="OpenDirect.Activity29" Name="Transition34" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition2" From="OpenDirect.Activity1" To="OpenDirect.Synchronizer1" Name="Transition2" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="OpenDirect.Transition1" From="OpenDirect.START_NODE" To="OpenDirect.Activity1" Name="Transition1" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+    </fpdl:Transitions>
+    <fpdl:Loops>
+        <fpdl:Loop Id="OpenDirect.Loop1" From="OpenDirect.Synchronizer7" To="OpenDirect.Synchronizer8" Name="Loop1" DisplayName="IsHouseContract==0">
+            <fpdl:Condition>IsHouseContract==0</fpdl:Condition>
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.labelPosition" Value="(19462,410)"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.edgePointList" Value="(1075,370)(715,372)"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Loop>
+    </fpdl:Loops>
+</fpdl:WorkflowProcess>

@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fpdl:WorkflowProcess PUBLIC "-//Nieyun Chen//ProcessDefinition//CN" "FireFlow_Process_Definition_Language.dtd">
+
+<fpdl:WorkflowProcess xmlns:fpdl="http://www.fireflow.org/Fireflow_Process_Definition_Language" Id="TaskPurchaseDevice" Name="TaskPurchaseDevice" DisplayName="Task设备采购流程" ResourceFile="" ResourceManager="" FormTaskInstanceRunner="app\services\AssignService" SubflowTaskInstanceRunner="app\services\SubFlowService">
+    <fpdl:DataFields>
+        <fpdl:DataField Id="TaskPurchaseDevice.largeEquipment" Name="largeEquipment" DisplayName="" DataType="INTEGER" InitialValue="0"/>
+        <fpdl:DataField Id="TaskPurchaseDevice.smallEquipment" Name="smallEquipment" DisplayName="" DataType="INTEGER" InitialValue="0"/>
+        <fpdl:DataField Id="TaskPurchaseDevice.monitor" Name="monitor" DisplayName="" DataType="INTEGER" InitialValue="0"/>
+        <fpdl:DataField Id="TaskPurchaseDevice.materials" Name="materials" DisplayName="" DataType="INTEGER" InitialValue="0"/>
+        <fpdl:DataField Id="TaskPurchaseDevice.firstDoor" Name="firstDoor" DisplayName="" DataType="INTEGER" InitialValue="0"/>
+        <fpdl:DataField Id="TaskPurchaseDevice.presaleEquipment" Name="presaleEquipment" DisplayName="" DataType="INTEGER" InitialValue="0"/>
+        <fpdl:DataField Id="TaskPurchaseDevice.smartDevice" Name="smartDevice" DisplayName="" DataType="INTEGER" InitialValue="0"/>
+    </fpdl:DataFields>
+    <fpdl:StartNode Id="TaskPurchaseDevice.START_NODE" Name="START_NODE" DisplayName="">
+        <fpdl:ExtendedAttributes>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="129"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="-126"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+            <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+        </fpdl:ExtendedAttributes>
+    </fpdl:StartNode>
+    <fpdl:Tasks/>
+    <fpdl:Activities>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity4" Name="Activity4" DisplayName="录入预售处订单期望到货时间" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="107"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="138"/>
+                <fpdl:ExtendedAttribute Name="page" Value="cargo-data"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="9"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity4.Task4" Name="Task4" DisplayName="录入预售订单预计发货时间" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity5" Name="Activity5" DisplayName="确认预售处订单已发货" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="purchase-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="104"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="324"/>
+                <fpdl:ExtendedAttribute Name="page" Value="deliver"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="9"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity5.Task5" Name="Task5" DisplayName="确认物料发货时间，预计到货时间" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity6" Name="Activity6" DisplayName="确认预售处订单已到货" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="106"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="480"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-deliver"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="9"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity6.Task6" Name="Task6" DisplayName="录入预售处器械订单到货时间及凭证" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity7" Name="Activity7" DisplayName="录入预售时间及成本" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="106"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="663"/>
+                <fpdl:ExtendedAttribute Name="page" Value="pre-time"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity7.Task7" Name="Task7" DisplayName="录入预售时间成本" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity15" Name="Activity15" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="106"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="895"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks/>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity8" Name="Activity8" DisplayName="辅助模块" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="108"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="-63"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity8.Task24" Name="Task24" DisplayName="辅助模块" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity9" Name="Activity9" DisplayName="录入大器械订单期望到货时间" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="-113"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="140"/>
+                <fpdl:ExtendedAttribute Name="page" Value="cargo-data"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="1"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity9.Task9" Name="Task9" DisplayName="录入大器械订单预计发货时间" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity10" Name="Activity10" DisplayName="录入小器械订单期望到货时间" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="-1"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="140"/>
+                <fpdl:ExtendedAttribute Name="page" Value="cargo-data"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="2"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity10.Task10" Name="Task10" DisplayName="录入小器械订单预计发货时间" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity11" Name="Activity11" DisplayName="录入监控订单期望到货时间" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="212"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="141"/>
+                <fpdl:ExtendedAttribute Name="page" Value="cargo-data"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="4"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity11.Task11" Name="Task11" DisplayName="录入监控订单预计发货时间" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity12" Name="Activity12" DisplayName="录入定制物料订单期望到货时间" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="328"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="141"/>
+                <fpdl:ExtendedAttribute Name="page" Value="cargo-data"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="5"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity12.Task12" Name="Task12" DisplayName="录入定制物料订单预计发货时间" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity13" Name="Activity13" DisplayName="录入门头订单期望到货时间" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="439"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="138"/>
+                <fpdl:ExtendedAttribute Name="page" Value="cargo-data"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="7"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity13.Task13" Name="Task13" DisplayName="录入门头订单预计发货时间" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity14" Name="Activity14" DisplayName="确认大器械订单已发货" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="purchase-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="-113"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="312"/>
+                <fpdl:ExtendedAttribute Name="page" Value="deliver"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="1"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity14.Task14" Name="Task14" DisplayName="录入物料订单发货时间及预计到货时间" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity16" Name="Activity16" DisplayName="确认大器械订单已到货" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="-112"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="470"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-deliver"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="1"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity16.Task15" Name="Task15" DisplayName="录入实际到货日期并上传图片" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity17" Name="Activity17" DisplayName="确认小器械订单已发货" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="purchase-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="-6"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="313"/>
+                <fpdl:ExtendedAttribute Name="page" Value="deliver"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="2"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity17.Task16" Name="Task16" DisplayName="录入物料订单发货时间及预计到货时间" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity18" Name="Activity18" DisplayName="确认小器械订单已到货" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="-7"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="480"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-deliver"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="2"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity18.Task17" Name="Task17" DisplayName="录入实际到货日期并上传图片" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity19" Name="Activity19" DisplayName="确认监控订单已发货" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="purchase-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="210"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="321"/>
+                <fpdl:ExtendedAttribute Name="page" Value="deliver"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="4"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity19.Task18" Name="Task18" DisplayName="录入物料订单发货时间及预计到货时间" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity20" Name="Activity20" DisplayName="确认监控订单已到货" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="211"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="483"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-deliver"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="4"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity20.Task19" Name="Task19" DisplayName="录入实际到货日期并上传图片" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity21" Name="Activity21" DisplayName="确认定制物料订单已发货" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="purchase-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="324"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="324"/>
+                <fpdl:ExtendedAttribute Name="page" Value="deliver"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="5"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity21.Task20" Name="Task20" DisplayName="录入物料订单发货时间及预计到货时间" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity22" Name="Activity22" DisplayName="确认定制物料订单已到货" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="323"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="481"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-deliver"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="5"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity22.Task21" Name="Task21" DisplayName="录入实际到货日期并上传图片" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity23" Name="Activity23" DisplayName="确认门头订单已发货" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="purchase-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="438"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="316"/>
+                <fpdl:ExtendedAttribute Name="page" Value="deliver"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="7"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity23.Task22" Name="Task22" DisplayName="录入物料订单发货时间及预计到货时间" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+        <fpdl:Activity Id="TaskPurchaseDevice.Activity24" Name="Activity24" DisplayName="确认门头订单已到货" CompletionStrategy="ALL">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="role_name" Value="project-specialist"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="442"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="496"/>
+                <fpdl:ExtendedAttribute Name="page" Value="confirm-deliver"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="100"/>
+                <fpdl:ExtendedAttribute Name="order_type" Value="7"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="60"/>
+            </fpdl:ExtendedAttributes>
+            <fpdl:Tasks>
+                <fpdl:Task Id="TaskPurchaseDevice.Activity24.Task23" Name="Task23" DisplayName="录入实际到货日期并上传图片" Type="FORM" CompletionStrategy="ANY" DefaultView="VIEWFORM" Priority="1" LoopStrategy="REDO"/>
+            </fpdl:Tasks>
+            <fpdl:TaskRefs/>
+        </fpdl:Activity>
+    </fpdl:Activities>
+    <fpdl:Synchronizers>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer1" Name="Synchronizer1" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="133"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="62"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer2" Name="Synchronizer2" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="-93"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="266"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer3" Name="Synchronizer3" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="-92"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="431"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer4" Name="Synchronizer4" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="16"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="266"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer5" Name="Synchronizer5" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="13"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="436"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer6" Name="Synchronizer6" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="125"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="271"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer7" Name="Synchronizer7" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="125"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="442"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer8" Name="Synchronizer8" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="231"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="271"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer9" Name="Synchronizer9" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="230"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="442"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer10" Name="Synchronizer10" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="346"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="272"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer11" Name="Synchronizer11" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="343"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="442"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer12" Name="Synchronizer12" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="458"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="267"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer13" Name="Synchronizer13" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="459"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="442"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer14" Name="Synchronizer14" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="126"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="611"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+        <fpdl:Synchronizer Id="TaskPurchaseDevice.Synchronizer15" Name="Synchronizer15" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="126"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="819"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:Synchronizer>
+    </fpdl:Synchronizers>
+    <fpdl:EndNodes>
+        <fpdl:EndNode Id="TaskPurchaseDevice.EndNode1" Name="EndNode1" DisplayName="">
+            <fpdl:ExtendedAttributes>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.y" Value="128"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.x" Value="1022"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.width" Value="20"/>
+                <fpdl:ExtendedAttribute Name="FIRE_FLOW.bounds.height" Value="20"/>
+            </fpdl:ExtendedAttributes>
+        </fpdl:EndNode>
+    </fpdl:EndNodes>
+    <fpdl:Transitions>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition1" From="TaskPurchaseDevice.START_NODE" To="TaskPurchaseDevice.Activity8" Name="Transition1" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition2" From="TaskPurchaseDevice.Activity8" To="TaskPurchaseDevice.Synchronizer1" Name="Transition2" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition3" From="TaskPurchaseDevice.Synchronizer1" To="TaskPurchaseDevice.Activity9" Name="Transition3" DisplayName="">
+            <fpdl:Condition>largeEquipment==1</fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition4" From="TaskPurchaseDevice.Synchronizer1" To="TaskPurchaseDevice.Activity10" Name="Transition4" DisplayName="">
+            <fpdl:Condition>smallEquipment==1</fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition5" From="TaskPurchaseDevice.Synchronizer1" To="TaskPurchaseDevice.Activity4" Name="Transition5" DisplayName="">
+            <fpdl:Condition>presaleEquipment==1</fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition6" From="TaskPurchaseDevice.Synchronizer1" To="TaskPurchaseDevice.Activity11" Name="Transition6" DisplayName="">
+            <fpdl:Condition>monitor==1</fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition7" From="TaskPurchaseDevice.Synchronizer1" To="TaskPurchaseDevice.Activity12" Name="Transition7" DisplayName="">
+            <fpdl:Condition>materials==1</fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition8" From="TaskPurchaseDevice.Synchronizer1" To="TaskPurchaseDevice.Activity13" Name="Transition8" DisplayName="">
+            <fpdl:Condition>firstDoor==1</fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition9" From="TaskPurchaseDevice.Activity9" To="TaskPurchaseDevice.Synchronizer2" Name="Transition9" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition10" From="TaskPurchaseDevice.Synchronizer2" To="TaskPurchaseDevice.Activity14" Name="Transition10" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition11" From="TaskPurchaseDevice.Activity14" To="TaskPurchaseDevice.Synchronizer3" Name="Transition11" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition12" From="TaskPurchaseDevice.Synchronizer3" To="TaskPurchaseDevice.Activity16" Name="Transition12" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition13" From="TaskPurchaseDevice.Activity10" To="TaskPurchaseDevice.Synchronizer4" Name="Transition13" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition14" From="TaskPurchaseDevice.Synchronizer4" To="TaskPurchaseDevice.Activity17" Name="Transition14" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition15" From="TaskPurchaseDevice.Activity17" To="TaskPurchaseDevice.Synchronizer5" Name="Transition15" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition16" From="TaskPurchaseDevice.Synchronizer5" To="TaskPurchaseDevice.Activity18" Name="Transition16" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition17" From="TaskPurchaseDevice.Activity4" To="TaskPurchaseDevice.Synchronizer6" Name="Transition17" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition18" From="TaskPurchaseDevice.Synchronizer6" To="TaskPurchaseDevice.Activity5" Name="Transition18" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition19" From="TaskPurchaseDevice.Activity5" To="TaskPurchaseDevice.Synchronizer7" Name="Transition19" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition20" From="TaskPurchaseDevice.Synchronizer7" To="TaskPurchaseDevice.Activity6" Name="Transition20" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition21" From="TaskPurchaseDevice.Activity11" To="TaskPurchaseDevice.Synchronizer8" Name="Transition21" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition22" From="TaskPurchaseDevice.Synchronizer8" To="TaskPurchaseDevice.Activity19" Name="Transition22" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition23" From="TaskPurchaseDevice.Activity19" To="TaskPurchaseDevice.Synchronizer9" Name="Transition23" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition24" From="TaskPurchaseDevice.Synchronizer9" To="TaskPurchaseDevice.Activity20" Name="Transition24" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition25" From="TaskPurchaseDevice.Activity12" To="TaskPurchaseDevice.Synchronizer10" Name="Transition25" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition26" From="TaskPurchaseDevice.Synchronizer10" To="TaskPurchaseDevice.Activity21" Name="Transition26" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition27" From="TaskPurchaseDevice.Activity21" To="TaskPurchaseDevice.Synchronizer11" Name="Transition27" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition28" From="TaskPurchaseDevice.Synchronizer11" To="TaskPurchaseDevice.Activity22" Name="Transition28" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition29" From="TaskPurchaseDevice.Activity13" To="TaskPurchaseDevice.Synchronizer12" Name="Transition29" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition30" From="TaskPurchaseDevice.Synchronizer12" To="TaskPurchaseDevice.Activity23" Name="Transition30" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition31" From="TaskPurchaseDevice.Activity23" To="TaskPurchaseDevice.Synchronizer13" Name="Transition31" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition32" From="TaskPurchaseDevice.Synchronizer13" To="TaskPurchaseDevice.Activity24" Name="Transition32" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition33" From="TaskPurchaseDevice.Activity6" To="TaskPurchaseDevice.Synchronizer14" Name="Transition33" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition34" From="TaskPurchaseDevice.Synchronizer14" To="TaskPurchaseDevice.Activity7" Name="Transition34" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition35" From="TaskPurchaseDevice.Activity7" To="TaskPurchaseDevice.Synchronizer15" Name="Transition35" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition36" From="TaskPurchaseDevice.Synchronizer15" To="TaskPurchaseDevice.Activity15" Name="Transition36" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition37" From="TaskPurchaseDevice.Activity15" To="TaskPurchaseDevice.EndNode1" Name="Transition37" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition38" From="TaskPurchaseDevice.Activity16" To="TaskPurchaseDevice.Synchronizer15" Name="Transition38" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition39" From="TaskPurchaseDevice.Activity18" To="TaskPurchaseDevice.Synchronizer15" Name="Transition39" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition40" From="TaskPurchaseDevice.Activity20" To="TaskPurchaseDevice.Synchronizer15" Name="Transition40" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition41" From="TaskPurchaseDevice.Activity22" To="TaskPurchaseDevice.Synchronizer15" Name="Transition41" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+        <fpdl:Transition Id="TaskPurchaseDevice.Transition42" From="TaskPurchaseDevice.Activity24" To="TaskPurchaseDevice.Synchronizer15" Name="Transition42" DisplayName="">
+            <fpdl:Condition></fpdl:Condition>
+        </fpdl:Transition>
+    </fpdl:Transitions>
+</fpdl:WorkflowProcess>

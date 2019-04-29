@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+defined('YII_DEBUG') or define('YII_DEBUG', true);
+
+defined('YII_ENV') or define('YII_ENV', 'dev');
+
+defined('AVAILABLE') or define('AVAILABLE', 1);
+
+defined('UNAVAILABLE') or define('UNAVAILABLE', 0);
+
+defined('LOCK_PATH') or define('LOCK_PATH', dirname(__FILE__).'/lock/');
+
+
+require(__DIR__ . '/vendor/autoload.php');
+require(__DIR__ . '/vendor/yiisoft/yii2/Yii.php');
+
+$config = require(__DIR__ . '/config/console.php');
+try{
+    $application = new yii\console\Application($config);
+    $exitCode    = $application->run();
+}catch (\Exception $e){
+    throw  $e;
+}
+
+
+exit($exitCode);

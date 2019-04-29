@@ -1,0 +1,47 @@
+{
+  "name": "OA",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "yiisoft/yii2": "~2.0.0",
+    "yiisoft/yii2-queue": "~2.0.0",
+    "yiisoft/yii2-redis": "~2.0.0",
+    "box/spout": "^2.7",
+    "ezyang/htmlpurifier": "^4.10",
+    "yiisoft/yii2-httpclient": "~2.0.0",
+    "mpdf/mpdf": "^7.0"
+  },
+  "require-dev": {
+    "yiisoft/yii2-gii": "*",
+    "yiisoft/yii2-debug": "*",
+    "yiisoft/yii2-bootstrap": "*"
+  },
+  "autoload":{
+    "psr-4":{"likingfit\\":"likingfit/"},
+    "files":["functions.php"]
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "yii\\composer\\Installer::postCreateProject"
+    ]
+  },
+  "extra": {
+    "yii\\composer\\Installer::postCreateProject": {
+      "setPermission": [
+        {
+          "runtime": "0777",
+          "web/assets": "0777",
+          "yii": "0755"
+        }
+      ],
+      "generateCookieValidationKey": [
+        "config/web.php"
+      ]
+    }
+  }
+}
